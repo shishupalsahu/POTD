@@ -1,0 +1,30 @@
+#include<iostream>
+#include<algorithm>
+using namespace std;
+int main(){
+    int t;
+    cin>>t;
+    while(t--){
+        string s;
+        cin>>s;
+        int a=stoi(s);
+        int n=s.size();
+        int m=n;
+        int brr[n];
+        int i=0;
+        while(m--){
+            int k=a%10;
+            brr[i]=k;
+            a/=10;
+            i++;
+        }
+        if(n==2){
+            cout<<brr[0]<<endl;
+        }
+        else{
+            sort(brr, brr+n);
+            cout<<brr[0]<<endl;
+        }
+    }
+    
+}
