@@ -1,0 +1,15 @@
+class Solution {
+public:
+    int subarrayGCD(vector<int>& nums, int k) {
+        int size=nums.size(),count=0;
+        for(int i=0;i<size;i++){
+            int GCD=nums[i];
+            for(int j=i;j<size;j++){
+                GCD=__gcd(GCD,nums[j]);
+                if(GCD==k)
+                    count++;
+            }
+        }
+        return count;
+    }
+};
