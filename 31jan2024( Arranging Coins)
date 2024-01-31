@@ -1,0 +1,28 @@
+class Solution {
+
+public:
+    int arrangeCoins(int n) {
+        //METHOD-1
+        return ((-1 + sqrt(1 + 8LL * n)) / 2); 
+      //METHOD-2(binary search)
+    //    int start=0;
+    //    int end=n;
+    //    while(start<=end){
+    //    long mid=start+(end-start)/2;
+    //    long k=mid*(mid+1)/2;
+    //        if(n==k){
+    //            return mid;
+    //        }
+    //        else if(k>n)
+    //                {
+    //                end=mid-1;
+    //                }
+    //                else{
+    //                    start=mid+1;
+    //                }
+    //            }
+    //         return end;
+       
+      
+     }
+};
