@@ -1,0 +1,29 @@
+  vector<int> sortByFreq(vector<int>& arr) {
+       int n = arr.size();
+    map<int, int> mp;
+    vector<pair<int, int>> freqVec;
+    vector<int> ans;
+
+    for(int i = 0; i < n; i++) {
+        mp[arr[i]]++;
+    }
+
+    for(auto &it : mp) {
+        freqVec.push_back(it);
+    }
+
+    // Sort by frequency, and in case of tie, by element value
+    sort(freqVec.begin(), freqVec.end(), [](pair<int, int>& a, pair<int, int>& b) {
+        if (a.second == b.second) {
+            return a.first < b.first;
+        }
+        return a.second > b.second;
+    });
+
+    for(auto &it : freqVec) {
+        while(it.second--) {
+            ans.push_back(it.first);
+        }
+    }
+
+    return ans;
