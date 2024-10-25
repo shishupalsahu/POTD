@@ -1,0 +1,16 @@
+ vector<int> alternateSort(vector<int>& arr) {
+        sort(arr.begin(),arr.end());
+        long long n=arr.size();
+        long long left=0,right=n-1;
+        vector<int>vec;
+     while(left<right){
+         vec.push_back(arr[right]);
+         vec.push_back(arr[left]);
+         left++;
+         right--;
+     }
+     if(left==right){
+       vec.push_back(arr[left]);
+     }
+     return vec;
+    }
