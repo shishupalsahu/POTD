@@ -1,0 +1,20 @@
+#include<bits/stdc++.h>
+class Solution {
+  public:
+    struct Node* quickSort(struct Node* head) {
+        vector<int>tmp;
+        Node* node=head;
+        while(node){
+            tmp.push_back(node->data);
+            node=node->next;
+        }
+        sort(tmp.begin(), tmp.end());
+        node=head;
+        int i=0;
+        while(node){
+            node->data=tmp[i++];
+            node=node->next;
+        }
+        return head;
+    }
+};
