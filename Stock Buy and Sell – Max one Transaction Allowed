@@ -1,0 +1,11 @@
+int maximumProfit(vector<int> &arr) {
+    int n = arr.size(), ans = 0;
+    if (n < 2) return 0; 
+    int mini = arr[0]; 
+    for (int i = 1; i < n; i++) { 
+        ans = max(ans, arr[i] - mini);
+        mini = min(mini, arr[i]);
+    }
+    
+    return ans;
+    }
