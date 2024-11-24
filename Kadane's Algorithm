@@ -1,0 +1,11 @@
+ int maxSubarraySum(vector<int> &arr) {
+       int max_sum = INT_MIN; // Maximum sum of any subarray
+    int current_sum = 0;   // Current sum of the subarray
+
+    for (int num : arr) {
+        current_sum = max(num, current_sum + num);
+        max_sum = max(max_sum, current_sum);
+    }
+
+    return max_sum;
+    }
